@@ -1,0 +1,29 @@
+// FONT
+$main-font: 'Source Sans Pro', sans-serif;
+
+$header-size: 1rem;
+$card-title-size: .9rem;
+$card-text-size: .8rem;
+$search-text-size: .7rem;
+
+$thin-font: 100;
+$medium-font: 400;
+$bold-font: 700;
+
+
+// COLORS
+$black: black;
+$grey: #b3b3b3;
+$light-grey: lighten($grey, 40%);
+$background: #f2f2f2;
+$white: #fff;
+
+
+// BREAKPOINTS
+$brk-small: 350px;
+$brk-medium: 705px;
+$brk-full: 1055px;
+
+
+// SPACING
+$grid-gap: 20px;

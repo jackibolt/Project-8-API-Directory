@@ -1,0 +1,20 @@
+// BASE styles
+
+* {
+  font-family: $main-font;
+  box-sizing: border-box;
+}
+
+body {
+  @include inset-block(90%);
+  background-color: $background;
+}
+
+h1 {
+  font-size: $header-size;
+}
+
+p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}

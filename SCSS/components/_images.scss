@@ -1,0 +1,17 @@
+// IMAGES styles
+
+.profile-pic {
+  border-radius: 50%;
+  height: 70px;
+  margin: 9px;
+  @include mediaQ('small') {
+    height: 100px;
+    margin: 15px;
+  }
+}
+
+.overlay-pic {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}

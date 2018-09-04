@@ -1,0 +1,31 @@
+// HEADER styles
+
+header{
+  text-align: center;
+  @include mediaQ('full'){
+    @include flex($just: space-between);
+    text-align: left;
+  }
+  height: 118px;
+}
+
+#title {
+  margin-top: 70px;
+  margin-bottom: 30px;
+  font-weight: $medium-font;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#search {
+  height: 30px;
+  width: 213px;
+  @extend %box-border;
+  color: $light-grey;
+  padding-left: 10px;
+  font-weight: $thin-font;
+  font-size: $search-text-size;
+  @include mediaQ('full') {
+    margin-top: 65px;
+  }
+}

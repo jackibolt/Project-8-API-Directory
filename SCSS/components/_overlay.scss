@@ -1,0 +1,38 @@
+// Overlay styles
+
+
+#overlay {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  justify-content: center;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  background-color: rgba(128,128,128,70%);
+}
+
+.box-content {
+  @include center-align();
+  color: $grey;
+  background-color: $white;
+  padding: 50px;
+  width: 350px;
+  height: 400px;
+  @extend %box-border;
+  line-height: 18px;
+  font-size: $card-text-size;
+  h3 {
+    color: $black;
+    font-size: $card-title-size;
+  }
+}
+
+.main-info {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px $grey solid;
+}

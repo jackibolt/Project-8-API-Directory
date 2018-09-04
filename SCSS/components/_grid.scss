@@ -1,0 +1,12 @@
+// GRID styles
+
+#grid {
+  @include grid($grid-rows: auto);
+  grid-gap: $grid-gap;
+  @include mediaQ('med'){
+    @include grid($grid-cols: auto auto)
+  }
+  @include mediaQ('full'){
+    @include grid($grid-cols: auto auto auto)
+  }
+}

@@ -1,0 +1,46 @@
+
+// Center Block-Align
+@mixin inset-block($w:null) {
+  width: $w;
+  margin: auto;
+}
+
+// Center Text-Align
+@mixin center-align($w:null) {
+  text-align: center;
+  @include inset-block;
+}
+
+// Flex
+@mixin flex ($disp: flex, $dir: null, $wrap: null, $just: null) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+}
+
+// Grid
+@mixin grid ($grid-cols: null, $grid-rows: null) {
+  display: grid;
+  grid-template-columns: $grid-cols;
+  grid-template-rows: $grid-rows;
+}
+
+// Media Query
+@mixin mediaQ ($break) {
+  @if $break == 'small' {
+    @media (min-width: $brk-small) {
+      @content;
+    }
+  }
+  @if $break == 'med' {
+    @media (min-width: $brk-medium) {
+      @content;
+    }
+  }
+  @if $break == 'full' {
+    @media (min-width: $brk-full) {
+      @content;
+    }
+  }
+}
