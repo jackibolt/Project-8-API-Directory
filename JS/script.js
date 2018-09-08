@@ -66,6 +66,7 @@ const showOverlay = () => {
     // cards.forEach(card => {
       e.target.classList.add('show-box');
       console.log(showBox);
+      overlay.style.display = 'flex';
     // });
   });
 };
