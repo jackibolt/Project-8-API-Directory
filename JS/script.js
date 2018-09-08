@@ -5,7 +5,7 @@ console.log('it works');
 const grid = document.querySelector('#grid');
 const overlay = document.querySelector('#overlay');
 const boxContent = document.querySelectorAll('.box-content');
-
+const employeeOverlays = [];
 
 // Fetch
 fetch('https://randomuser.me/api/?results=12&?nat=us')
@@ -39,9 +39,12 @@ const createEmployeeProfiles = (employeeData) => {
           <p class='city'>${employeeData[i].location.city}</p>
         </div>`;
   createChildElement('div', 'card', employeeCard, grid);
+  }
+};
 
-  let employeeOverlay =
-      `<img src="${employeeData[i].picture.large}" alt="${employeeData[i].name.first} ${employeeData[i].name.last}" class='overlay-pic'>
+employeeOverlays[i] =
+    `<div class="box-content">
+      <img src="${employeeData[i].picture.large}" alt="${employeeData[i].name.first} ${employeeData[i].name.last}" class='overlay-pic'>
         <div class='main-info'>
           <h3>${employeeData[i].name.first} ${employeeData[i].name.last}</h3>
           <p>${employeeData[i].email}</p>
@@ -51,10 +54,9 @@ const createEmployeeProfiles = (employeeData) => {
           <p>${employeeData[i].cell}</p>
           <p>${employeeData[i].location.street} ${employeeData[i].location.city} ${employeeData[i].location.state} ${employeeData[i].location.postcode}</p>
           <p>Birthday: ${employeeData[i].dob.date}</p>
-        </div>`;
-  createChildElement('div', 'box-content', employeeOverlay, overlay);
-  }
-};
+        </div>
+      </div>`;
+
 
 //// show Overlay
 const showOverlay = () => {
@@ -63,10 +65,7 @@ const showOverlay = () => {
   // click handler
   grid.addEventListener('click', (e) => {
     console.log(e.target);
-    // cards.forEach(card => {
-      e.target.classList.add('show-box');
-      console.log(showBox);
+      overlay.innerHTML = employeeOverlays[0];
       overlay.style.display = 'flex';
-    // });
   });
 };
