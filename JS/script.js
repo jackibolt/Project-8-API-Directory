@@ -6,6 +6,9 @@ const grid = document.querySelector('#grid');
 const overlay = document.querySelector('#overlay');
 const boxContent = document.querySelectorAll('.box-content');
 const empCard = document.querySelectorAll('.emp-card');
+let index = ''
+let next = '';
+let prev = '';
 let names = [];
 let employeeData = '';
 let employeeOverlays = [];
@@ -75,27 +78,34 @@ const showOverlay = () => {
   // click handler
   grid.addEventListener('click', (e) => {
     if (e.target.tagName !== 'SECTION') {
-      const index = e.target.getAttribute('data-index');
+      let index = e.target.getAttribute('data-index');
+
       for (i=0; i<cards.length; i+=1) {
         overlay.innerHTML = employeeOverlays[index];
         overlay.style.display = 'flex';
       }
-      const next = index + 1;
-      const prev = index - 1;
-      overlay.addEventListener('click', (e) => {
-        console.log(e.target.id);
-        if (e.target.id === 'right'){
-          overlay.innerHMTL = employeeOverlays[2];
-        }
-          else if (e.target.id === 'left') {
-          overlay.innerHMTL = employeeOverlays[3];
-        }
-          else if (e.target.tagName === 'svg' || e.target.tagName === 'path' || e.target.id === 'overlay'){
-          overlay.style.display = 'none';
-          overlay.innerHTML = '';
-        }
-    });
+
+      next = (parseInt(index) + 1);
+      prev = (parseInt(index) - 1);
   }
+
+    overlay.addEventListener('click', (e) => {
+        console.log(e.target.id);
+      if (e.target.id === 'right'){
+        overlay.innerHTML = employeeOverlays[next];
+        overlay.style.display = 'flex';
+        index = next;
+        console.log(index);
+      } else if (e.target.id === 'left') {
+        overlay.innerHTML = employeeOverlays[prev];
+        overlay.style.display = 'flex';
+        index = prev;
+        console.log(index);
+      } else if (e.target.tagName === 'svg' || e.target.tagName === 'path' || e.target.id === 'overlay'){
+        overlay.style.display = 'none';
+        overlay.innerHTML = '';
+      }
+    });
   });
 };;
 
