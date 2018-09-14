@@ -21,11 +21,14 @@ header{
   height: 30px;
   width: 213px;
   @extend %box-border;
-  color: $light-grey;
   padding-left: 10px;
   font-weight: $thin-font;
   font-size: $search-text-size;
   @include mediaQ('full') {
     margin-top: 65px;
   }
+}
+
+input {
+  color: black;
 }

@@ -1,4 +1,4 @@
-.box-content, #search, .card {
+.box-content, .emp-card, #search {
   border: 1px solid #b3b3b3;
   border-radius: 8px;
 }
@@ -355,45 +355,9 @@ p {
   margin-bottom: 3px;
 }
 
-.card {
-  padding: 8px;
-  width: auto;
-  background-color: #fff;
-  display: flex;
-}
-
-.text-info {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 350px) {
-  .text-info {
-    margin-top: 30px;
-  }
-}
-
-.name {
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.email,
-.city {
-  font-size: 0.8rem;
-  margin-top: 5px;
-  color: #b3b3b3;
-}
-
-.name,
-.city {
-  text-transform: capitalize;
-}
-
 #grid {
   display: grid;
   grid-template-rows: auto;
-  grid-gap: 20px;
 }
 @media (min-width: 705px) {
   #grid {
@@ -431,7 +395,6 @@ header {
 #search {
   height: 30px;
   width: 213px;
-  color: white;
   padding-left: 10px;
   font-weight: 100;
   font-size: 0.7rem;
@@ -442,10 +405,15 @@ header {
   }
 }
 
+input {
+  color: black;
+}
+
 .profile-pic {
   border-radius: 50%;
   height: 70px;
   margin: 9px;
+  cursor: pointer;
 }
 @media (min-width: 350px) {
   .profile-pic {
@@ -458,6 +426,76 @@ header {
   height: 120px;
   width: 120px;
   border-radius: 50%;
+}
+
+.x,
+.arrow {
+  cursor: pointer;
+  position: absolute;
+}
+
+.x {
+  top: 15px;
+  right: 15px;
+  height: 15px;
+  width: 15px;
+}
+
+.arrow {
+  height: 25px;
+  width: 25px;
+}
+
+.left {
+  top: 185px;
+  left: 15px;
+}
+
+.right {
+  top: 185px;
+  right: 15px;
+}
+
+.card {
+  padding: 15px;
+}
+
+.emp-card {
+  padding: 8px;
+  width: auto;
+  background-color: #fff;
+  display: flex;
+}
+.emp-card .name {
+  cursor: pointer;
+}
+
+.text-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 15px;
+}
+@media (min-width: 350px) {
+  .name {
+    margin-top: 30px;
+  }
+}
+
+.email,
+.city {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  color: #b3b3b3;
+}
+
+.name,
+.city {
+  text-transform: capitalize;
 }
 
 #overlay {
@@ -475,6 +513,7 @@ header {
 }
 
 .box-content {
+  position: relative;
   text-align: center;
   margin: auto;
   color: #b3b3b3;
@@ -485,7 +524,7 @@ header {
   line-height: 18px;
   font-size: 0.8rem;
 }
-.box-content h3 {
+.box-content .name {
   color: black;
   font-size: 0.9rem;
 }
@@ -494,6 +533,10 @@ header {
   padding-bottom: 15px;
   margin-bottom: 15px;
   border-bottom: 1px #b3b3b3 solid;
+}
+
+.location {
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=styles.css.map */

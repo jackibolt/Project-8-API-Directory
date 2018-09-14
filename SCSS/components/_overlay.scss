@@ -16,6 +16,7 @@
 }
 
 .box-content {
+  position: relative;
   @include center-align();
   color: $grey;
   background-color: $white;
@@ -25,7 +26,7 @@
   @extend %box-border;
   line-height: 18px;
   font-size: $card-text-size;
-  h3 {
+  .name {
     color: $black;
     font-size: $card-title-size;
   }
@@ -35,4 +36,8 @@
   padding-bottom: 15px;
   margin-bottom: 15px;
   border-bottom: 1px $grey solid;
+}
+
+.location {
+  text-transform: capitalize;
 }

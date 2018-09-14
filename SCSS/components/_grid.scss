@@ -2,7 +2,7 @@
 
 #grid {
   @include grid($grid-rows: auto);
-  grid-gap: $grid-gap;
+  // grid-gap: $grid-gap;
   @include mediaQ('med'){
     @include grid($grid-cols: auto auto)
   }
