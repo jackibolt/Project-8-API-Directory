@@ -75,7 +75,6 @@ const createEmployeeProfiles = (employeeData) => {
             <p class='bday'>Birthday: ${birthday}</p>
           </div>
         </div>`;
-  const overlay = employeeOverlays[i];
   }
 };
 
@@ -112,7 +111,7 @@ const showOverlay = () => {
       }
     });
   });
-};;
+};
 
 
 //// search
@@ -121,23 +120,23 @@ const search = function () {
   const searchBox = document.querySelector('#search');
   let cards = document.querySelectorAll('.card');
 
-    searchBox.addEventListener('keyup', () => {
-            // Search Input variable
-      const input = searchBox.value.toLowerCase();
+  searchBox.addEventListener('keyup', () => {
+          // Search Input variable
+    const input = searchBox.value.toLowerCase();
 
-      for (i=0; i<names.length; i+=1) {
-        const fullName = names[i];
-        const user = usernames[i];
-        if (fullName.includes(input) || user.includes(input)) {
-                // Display matching results
-          console.log('yes');
-          cards[i].style.display = "block";
+    for (i=0; i<names.length; i+=1) {
+      const fullName = names[i];
+      const user = usernames[i];
+      if (fullName.includes(input) || user.includes(input)) {
+              // Display matching results
+        console.log('yes');
+        cards[i].style.display = "block";
 
-        } else {
-                // Hide non-matching results
-          console.log('no');
-          cards[i].style.display = "none";
-        }
-      };
-    })
-  };
+      } else {
+              // Hide non-matching results
+        console.log('no');
+        cards[i].style.display = "none";
+      }
+    }
+  });
+};
