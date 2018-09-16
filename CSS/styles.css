@@ -428,13 +428,13 @@ input {
   border-radius: 50%;
 }
 
-.x,
+#x,
 .arrow {
   cursor: pointer;
   position: absolute;
 }
 
-.x {
+#x {
   top: 15px;
   right: 15px;
   height: 15px;
@@ -442,6 +442,7 @@ input {
 }
 
 .arrow {
+  maring: 10px;
   height: 25px;
   width: 25px;
 }
